@@ -1,0 +1,227 @@
+/* Updated customStyles.css */
+
+.canvas {
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background 0.4s ease;
+  position: relative;
+}
+
+/* Light mode background - Cool Sky Tones */
+.canvas.light {
+  background: linear-gradient(135deg, #dbefff, #f5fbff);
+}
+
+/* Dark mode background */
+.canvas.dark {
+  background: #1e1e2f;
+}
+
+/* Light mode edges */
+.canvas.light .react-flow__edge-path {
+  stroke: #333 !important;
+}
+
+/* Dark mode edges */
+.canvas.dark .react-flow__edge-path {
+  stroke: #fff !important;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 15px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: none;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.canvas.dark .theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.canvas.light .theme-toggle {
+  background: rgba(0, 0, 0, 0.05);
+  color: #333;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle:hover {
+  background: #ffffff33;
+}
+
+.custom-node {
+  padding: 12px 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.2s ease;
+}
+
+.custom-node:hover {
+  transform: scale(1.05);
+}
+
+/* Node color match for light mode */
+.canvas.light .custom-node.block-a {
+  background: linear-gradient(145deg, #fff2e0, #ffe5cc);
+  color: #222;
+  border: 2px solid #ffcc99;
+}
+
+.canvas.light .custom-node.block-b {
+  background: linear-gradient(145deg, #e6f2ff, #cce6ff);
+  color: #222;
+  border: 2px solid #99ccff;
+}
+
+.custom-node.block-a {
+  background: linear-gradient(145deg, #ff5f6d, #ffc371);
+  color: #000;
+  border: 2px solid #ffce91;
+}
+
+.custom-node.block-b {
+  background: linear-gradient(145deg, #24c6dc, #514a9d);
+  color: #fff;
+  border: 2px solid #6a8dff;
+}
+
+.node-label {
+  margin-right: 10px;
+}
+
+.context-popup {
+  position: absolute;
+  background: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  color: #000;
+}
+
+/* App.css */
+
+.app {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.canvas {
+  flex: 1;
+  position: relative;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(135deg, #eaf6ff, #f2fbff); /* lighter tone for light mode */
+  color: #222;
+  padding: 20px 15px;
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+  border-left: 2px solid rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+
+.canvas.dark .sidebar {
+  background: linear-gradient(135deg, #1e1e2f, #2c2c54);
+  color: white;
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.3);
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.canvas.dark .sidebar h2 {
+  color: #ffda79;
+}
+
+.draggable-block {
+  width: 90%;
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  color: inherit;
+  cursor: grab;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.draggable-block:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.blockA {
+  background: linear-gradient(135deg, #fff1e0, #ffe0cc);
+  border: 2px solid #ffd1a1;
+  color: #222;
+}
+
+.canvas.dark .blockA {
+  background: linear-gradient(135deg, #ff6a6a, #ffc371);
+  border: 2px solid #ffb347;
+  color: white;
+}
+
+.blockB {
+  background: linear-gradient(135deg, #ddefff, #cce0ff);
+  border: 2px solid #aaccee;
+  color: #222;
+}
+
+.canvas.dark .blockB {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border: 2px solid #7a7aff;
+  color: white;
+}
+
+.block-icon {
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.sidebar .drag-label {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.canvas.dark .sidebar .drag-label {
+  color: #ccc;
+}
