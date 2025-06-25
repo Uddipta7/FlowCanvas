@@ -28,7 +28,7 @@ FlowCanvas is an interactive visual editor built with **React** and **@xyflow/re
 
 ## 🚀 Live Demo
 
-👉 [https://flowcanvas.vercel.app](https://flowcanvas.vercel.app) *(Replace with your actual URL)*
+👉 [https://flowcanvas.vercel.app](https://flow-canvas-five.vercel.app/) 
 
 ---
 
