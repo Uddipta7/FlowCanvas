@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# 🎨 FlowCanvas – A Visual Drag & Connect Flow Builder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+FlowCanvas is an interactive visual editor built with **React** and **@xyflow/react** (React Flow), where users can drag predefined blocks, place them on a canvas, and connect them with meaningful restrictions (e.g., only Block A ➝ Block B connections are allowed). The application supports **undo/redo**, **dark/light themes**, and a **modern aesthetic using glassmorphism**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🔧 Features
 
-### `npm start`
+- ✅ **Drag & Drop** Block A and B onto the canvas
+- 🔗 **Only valid connection allowed** (Block A ➝ Block B)
+- ⚠️ **Error handled visually** when invalid connections attempted
+- 🌗 **Dark/Light theme toggle** with matching designs
+- ♻️ **Undo/Redo** (Ctrl+Z / Ctrl+Y) and Delete support
+- 🌈 **Stylish UI** using gradients, glassmorphism, shadows
+- 📍 **Context menu popup** on right-click (e.g., “Hello World”)
+- ⚡ Responsive and smooth animations
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📦 Tech Stack
 
-### `npm test`
+- **React** (CRA)
+- **@xyflow/react** (React Flow library)
+- **CSS Modules** & custom styles
+- **UUID** for unique node IDs
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🚀 Live Demo
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+👉 [https://flowcanvas.vercel.app](https://flowcanvas.vercel.app) *(Replace with your actual URL)*
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📥 Installation
 
-### `npm run eject`
+Follow these steps to run locally:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 1. Clone the Repository
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/yourusername/flowcanvas.git
+cd flowcanvas
+```
+### 2. Install Dependencies
+Make sure you have Node.js and npm installed.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm install
+```
+### 3. Run the App Locally
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm start
+```
+The app should open at http://localhost:3000
 
-## Learn More
+## 🛠 Design Decisions
+### 🎯 Valid Connection Logic
+- All nodes have both source and target handles.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Connections are validated in onConnect handler.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- If invalid (e.g., B ➝ A or A ➝ A), an alert message is shown.
 
-### Code Splitting
+### 🌗 Theme Support
+- light mode: soft pastel gradient background, dark edges
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- dark mode: deep purple/blue with neon borders
 
-### Analyzing the Bundle Size
+- Toggle button on canvas top-right (🌞 / 🌙)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 📦 Component Structure
+- FlowCanvas.jsx – Canvas, logic for connection and node state
 
-### Making a Progressive Web App
+- Sidebar.jsx – Draggable block options (A and B)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- blocks.json – Static block definitions
 
-### Advanced Configuration
+- customStyles.css – UI styling, transitions, themes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🧼 Folder Structure
+```pgsql
+src/
+│
+├── components/
+│   ├── FlowCanvas.jsx
+│   └── Sidebar.jsx
+│
+├── data/
+│   └── blocks.json
+│
+├── App.jsx
+├── customStyles.css
+└── index.js
+```
 
-### Deployment
+## 🌍 Deployment (Vercel)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Push your project to GitHub
 
-### `npm run build` fails to minify
+- Go to vercel.com → Import GitHub repo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Choose root directory (where package.json is)
+
+- Click Deploy
+
+- Copy the live link shown at the end
